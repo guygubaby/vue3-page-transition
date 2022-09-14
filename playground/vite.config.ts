@@ -10,7 +10,6 @@ import Markdown from 'vite-plugin-md'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Layouts from 'vite-plugin-vue-layouts'
-import generateSitemap from 'vite-ssg-sitemap'
 
 export default defineConfig({
   resolve: {
@@ -81,10 +80,4 @@ export default defineConfig({
     port: 3333,
   },
   optimizeDeps: {},
-  // https://github.com/antfu/vite-ssg
-  ssgOptions: {
-    script: 'async',
-    formatting: 'minify',
-    onFinished() { generateSitemap() },
-  },
 })

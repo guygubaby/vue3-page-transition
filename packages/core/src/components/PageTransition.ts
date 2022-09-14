@@ -1,8 +1,8 @@
 import type { PropType, TransitionProps } from 'vue'
-import { Transition, defineComponent, h, ref } from 'vue'
+import { Transition, defineComponent, h, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
-export type IName = 'fade' | 'fade-in-up' | 'fade-in-down' | 'fade-in-left' | 'fade-in-right' | 'overlay-up' | 'overlay-down' | 'overlay-left' | 'overlay-right' | 'slide-up' | 'slide-down' | 'overlay-down-full' | 'overlay-right-full' | 'overlay-up-full' | 'overlay-left-full' | 'overlay-up-down' | 'overlay-left-right' | 'flip-x' | 'flip-y' | 'zoom'
+export type ITransitionName = 'fade' | 'fade-in-up' | 'fade-in-down' | 'fade-in-left' | 'fade-in-right' | 'overlay-up' | 'overlay-down' | 'overlay-left' | 'overlay-right' | 'overlay-down-full' | 'overlay-right-full' | 'overlay-up-full' | 'overlay-left-full' | 'overlay-up-down' | 'overlay-left-right' | 'flip-x' | 'flip-y' | 'zoom'
 type IMode = TransitionProps['mode']
 type Appear = TransitionProps['appear']
 
@@ -10,7 +10,7 @@ export const PageTransition = defineComponent({
   name: 'PageTransition',
   props: {
     name: {
-      type: String as PropType<IName>,
+      type: String as PropType<ITransitionName>,
       required: false,
       default: 'fade',
     },
@@ -28,10 +28,17 @@ export const PageTransition = defineComponent({
   setup(props, { slots }) {
     const router = useRouter()
 
-    const transition = ref<IName>(props.name || 'fade')
+    const transition = ref<ITransitionName>(props.name)
+
+    watch(() => props.name, (val) => {
+      transition.value = val || 'fade'
+    })
 
     router.beforeEach((to, _, next) => {
-      transition.value = to.meta.transition as IName || props.name
+      if (!to.meta.transition)
+        return next()
+
+      transition.value = to.meta.transition as ITransitionName || props.name
       next()
     })
 

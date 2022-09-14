@@ -1,48 +1,43 @@
 <template>
-  <div text-center>
-    <div i-carbon-campsite text-4xl inline-block />
-    <p>
-      <span text-sm op75>It works</span>
-    </p>
+  <div flex items-center justify-center w-full>
+    <div flex="~ col" items-center container>
+      <h1 text="2xl" leading-8 mb-10>
+        Vue3 page transition
+      </h1>
 
-    <div py-4 />
+      <ul flex="~" gap-4>
+        <li v-for="item in TransitionPresets" :key="item">
+          <button class="icon-btn" @click="setTransitionName(item)">
+            {{ item }}
+          </button>
+        </li>
+      </ul>
 
-    <input
-      id="input"
-      v-model="name"
-      placeholder="What's your name?"
-      type="text"
-      autocomplete="false"
-      p="x-4 y-2"
-      w="250px"
-      text="center"
-      bg="transparent"
-      border="~ rounded gray-200 dark:gray-700"
-      outline="none active:none"
-      @keydown.enter="go"
-    >
-
-    <div>
-      <button
-        class="m-3 text-sm btn"
-        :disabled="!name"
-        @click="go"
-      >
-        Go
-      </button>
+      <PageTransition appear :name="transitionName">
+        <div v-if="isShow" ring w-60 h-60 my-10 rounded-xl flex items-center justify-center>
+          Choose transition from top
+        </div>
+      </PageTransition>
     </div>
-
-    <router-link class="btn mt-4" to="markdown">
-      markdown
-    </router-link>
   </div>
 </template>
 
 <script setup lang="ts">
-const name = ref('')
-const router = useRouter()
-const go = () => {
-  if (name)
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
+import type { ITransitionName } from 'vue3-page-transition'
+import { PageTransition, TransitionPresets } from 'vue3-page-transition'
+
+const isShow = ref(true)
+
+const triggerTransition = async () => {
+  isShow.value = false
+  await nextTick()
+  isShow.value = true
+}
+
+const transitionName = ref<ITransitionName>(TransitionPresets.fade)
+
+const setTransitionName = (name: ITransitionName) => {
+  transitionName.value = name
+  triggerTransition()
 }
 </script>
