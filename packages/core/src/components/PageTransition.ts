@@ -31,6 +31,7 @@ export interface IPageTransitionProps {
   mode?: ITransitionMode
   appear?: Appear
   overlay?: boolean
+  overlayZIndex?: number
   overlayBg?: string
   transitionDuration?: number
   transformDistance?: number
@@ -68,6 +69,11 @@ export const PageTransition = defineComponent({
       type: Number,
       required: false,
       default: 300,
+    },
+    overlayZIndex: {
+      type: Number,
+      required: false,
+      default: 9999,
     },
     /**
      * Used as fade-x transform distance
@@ -140,30 +146,26 @@ export const PageTransition = defineComponent({
     }
 
     const renderOverlay = () => {
+      const style = {
+        zIndex: props.overlayZIndex ?? 9999,
+      }
+
       return h(Fragment, [
         h('div', {
           class: 'overlay-top',
-          style: {
-            zIndex: 9990,
-          },
+          style,
         }),
         h('div', {
           class: 'overlay-right',
-          style: {
-            zIndex: 9990,
-          },
+          style,
         }),
         h('div', {
           class: 'overlay-bottom',
-          style: {
-            zIndex: 9990,
-          },
+          style,
         }),
         h('div', {
           class: 'overlay-left',
-          style: {
-            zIndex: 9990,
-          },
+          style,
         }),
       ])
     }
