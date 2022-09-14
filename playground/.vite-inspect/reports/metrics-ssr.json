@@ -1,0 +1,187 @@
+[
+  {
+    "name": "alias",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "unocss:config",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "unocss:devtools",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "unocss:global",
+    "enforce": "pre",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "unocss:global:post",
+    "enforce": "post",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "unocss:inspector",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "unocss:transformers:default",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "unocss:transformers:post",
+    "enforce": "post",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "unocss:transformers:pre",
+    "enforce": "pre",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "unplugin-auto-import",
+    "enforce": "post",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "unplugin-vue-components",
+    "enforce": "post",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite-plugin-inspect",
+    "enforce": "pre",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite-plugin-md",
+    "enforce": "pre",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite-plugin-pages",
+    "enforce": "pre",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite-plugin-vue-layouts",
+    "enforce": "pre",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:asset",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:client-inject",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:css",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:css-post",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:define",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:dynamic-import-vars",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:esbuild",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:html-inline-proxy",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:import-analysis",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:import-glob",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:json",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:modulepreload-polyfill",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:optimized-deps",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:pre-alias",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:resolve",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:vue",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:wasm-fallback",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:wasm-helper",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:worker",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:worker-import-meta-url",
+    "invokeCount": 0,
+    "totalTime": 0
+  }
+]

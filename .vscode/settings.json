@@ -1,0 +1,14 @@
+{
+  "prettier.enable": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "*.css": "css"
+  },
+  "unocss.root": "playground",
+  "cSpell.words": [
+    "noopener"
+  ]
+}

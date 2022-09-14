@@ -1,0 +1,30 @@
+@keyframes fadeInLeft {
+  from {
+    transform: translate3d(-40px, 0, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
+}
+
+.fade-in-left-leave-active {
+  transition: opacity .3s;
+}
+
+.fade-in-left-leave-to {
+  opacity: 0;
+}
+
+.fade-in-left-enter-from {
+  opacity: 0;
+  transform: translate3d(-40px, 0, 0);
+}
+
+.fade-in-left-enter-to {
+  animation-duration: .7s;
+  animation-fill-mode: both;
+  animation-name: fadeInLeft;
+}

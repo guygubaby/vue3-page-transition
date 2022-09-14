@@ -1,0 +1,58 @@
+{
+  "name": "vue3-page-transition",
+  "version": "0.0.0",
+  "description": "A lean Vue.js plugin for page / route transitions.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "guygubaby guygubaby@gmail.com",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/guygubaby",
+  "homepage": "https://github.com/guygubaby/vue3-page-transition",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guygubaby/vue3-page-transition"
+  },
+  "bugs": "https://github.com/guygubaby/vue3-page-transition/issues",
+  "keywords": [
+    "vue",
+    "vuejs3",
+    "vue plugin",
+    "vue route transition",
+    "vue router",
+    "vue routing",
+    "vue transition",
+    "vue animation"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./style.css": {
+      "require": "./dist/index.css",
+      "import": "./dist/index.css"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "copy-readme": "esno ../../scripts/copy-readme.ts",
+    "prepublishOnly": "pnpm run copy-readme && pnpm run build",
+    "dev": "pnpm build --watch",
+    "build-dts": "tsc src/index.ts --declaration --emitDeclarationOnly --outDir dist",
+    "build": "esno build.ts && pnpm run build-dts",
+    "start": "esno src/index.ts"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.15.7",
+    "esbuild-sass-plugin": "^2.3.2"
+  }
+}

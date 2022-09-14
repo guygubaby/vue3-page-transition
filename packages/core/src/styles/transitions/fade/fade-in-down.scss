@@ -1,0 +1,30 @@
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
+}
+
+.fade-in-down-leave-active {
+  transition: opacity .3s;
+}
+
+.fade-in-down-leave-to {
+  opacity: 0;
+}
+
+.fade-in-down-enter-from {
+  opacity: 0;
+  transform: translate3d(0, -40px, 0);
+}
+
+.fade-in-down-enter-to {
+  animation-duration: .7s;
+  animation-fill-mode: both;
+  animation-name: fadeInDown;
+}
