@@ -1,7 +1,7 @@
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translate3d(0, -40px, 0);
+    transform: translate3d(0, calc(0px - var(--transform-distance)), 0);
   }
 
   to {
@@ -11,7 +11,7 @@
 }
 
 .fade-in-down-leave-active {
-  transition: opacity .3s;
+  transition: opacity var(--transition-duration, 300ms);
 }
 
 .fade-in-down-leave-to {
@@ -20,7 +20,7 @@
 
 .fade-in-down-enter-from {
   opacity: 0;
-  transform: translate3d(0, -40px, 0);
+  transform: translate3d(0, calc(0px - var(--transform-distance)), 0);
 }
 
 .fade-in-down-enter-to {

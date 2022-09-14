@@ -22,5 +22,5 @@
 
 .overlay-up-down-enter-active,
 .overlay-up-down-leave-active {
-  transition-duration: var(--transition-duration);
+  transition-duration: var(--transition-duration, 300ms);
 }

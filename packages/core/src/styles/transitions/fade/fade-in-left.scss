@@ -1,6 +1,6 @@
 @keyframes fadeInLeft {
   from {
-    transform: translate3d(-40px, 0, 0);
+    transform: translate3d(calc(0px - var(--transform-distance)), 0, 0);
     opacity: 0;
   }
 
@@ -11,7 +11,7 @@
 }
 
 .fade-in-left-leave-active {
-  transition: opacity .3s;
+  transition: opacity var(--transition-duration, 300ms);
 }
 
 .fade-in-left-leave-to {
@@ -20,7 +20,7 @@
 
 .fade-in-left-enter-from {
   opacity: 0;
-  transform: translate3d(-40px, 0, 0);
+  transform: translate3d(calc(0px - var(--transform-distance)), 0, 0);
 }
 
 .fade-in-left-enter-to {

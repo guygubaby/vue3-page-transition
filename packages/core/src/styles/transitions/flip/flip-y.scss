@@ -1,6 +1,6 @@
 .flip-y-enter-active,
 .flip-y-leave-active {
-  transition-duration: 0.3s;
+  transition-duration: var(--transition-duration, 300ms);
   transition-property: all;
   transition-timing-function: ease;
 }

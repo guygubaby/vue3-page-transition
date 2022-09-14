@@ -1,6 +1,6 @@
 .fade-enter-active,
 .fade-leave-active {
-  transition-duration: 0.3s;
+  transition-duration: var(--transition-duration, 300ms);
   transition-property: opacity;
   transition-timing-function: ease;
 }

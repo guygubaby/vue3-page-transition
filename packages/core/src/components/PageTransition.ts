@@ -3,8 +3,19 @@ import { Transition, defineComponent, h, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
 export type ITransitionName = 'fade' | 'fade-in-up' | 'fade-in-down' | 'fade-in-left' | 'fade-in-right' | 'overlay-up' | 'overlay-down' | 'overlay-left' | 'overlay-right' | 'overlay-down-full' | 'overlay-right-full' | 'overlay-up-full' | 'overlay-left-full' | 'overlay-up-down' | 'overlay-left-right' | 'flip-x' | 'flip-y' | 'zoom'
-type IMode = TransitionProps['mode']
+type ITransitionMode = TransitionProps['mode']
 type Appear = TransitionProps['appear']
+
+export interface IPageTransitionProps {
+  name?: ITransitionName
+  mode?: ITransitionMode
+  appear?: Appear
+  overlayBg?: string
+  transitionDuration?: number
+  transformDistance?: number
+}
+
+export const defineTransitionProps = (props: IPageTransitionProps) => props
 
 export const PageTransition = defineComponent({
   name: 'PageTransition',
@@ -15,7 +26,7 @@ export const PageTransition = defineComponent({
       default: 'fade',
     },
     mode: {
-      type: String as PropType<IMode>,
+      type: String as PropType<ITransitionMode>,
       required: false,
       default: 'out-in',
     },
@@ -23,6 +34,27 @@ export const PageTransition = defineComponent({
       type: Boolean as PropType<Appear>,
       required: false,
       default: false,
+    },
+    overlayBg: {
+      type: String,
+      required: false,
+      default: '#1867c0',
+    },
+    /**
+     * In ms, default is 300ms
+     */
+    transitionDuration: {
+      type: Number,
+      required: false,
+      default: 300,
+    },
+    /**
+     * Used as fade-x transform distance
+     */
+    transformDistance: {
+      type: [Number, String],
+      required: false,
+      default: 40,
     },
   },
   setup(props, { slots }) {
@@ -42,8 +74,26 @@ export const PageTransition = defineComponent({
       next()
     })
 
+    const getTransformDistance = () => {
+      const { transformDistance } = props
+      if (!transformDistance)
+        return null
+
+      if (typeof transformDistance === 'number')
+        return `${transformDistance}px`
+
+      return transformDistance
+    }
+
     return () => (
       h('div',
+        {
+          style: {
+            '--overlay-bg': props.overlayBg ? props.overlayBg : null,
+            '--transition-duration': props.transitionDuration ? `${props.transitionDuration}ms` : null,
+            '--transform-distance': getTransformDistance(),
+          },
+        },
         [
           h(Transition, {
             name: transition.value,

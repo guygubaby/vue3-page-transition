@@ -22,5 +22,5 @@
 
 .overlay-left-right-enter-active,
 .overlay-left-right-leave-active {
-  transition-duration: var(--transition-duration);
+  transition-duration: var(--transition-duration, 300ms);
 }
