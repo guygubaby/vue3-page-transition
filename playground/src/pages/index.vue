@@ -13,7 +13,7 @@
         </li>
       </ul>
 
-      <PageTransition appear :name="transitionName">
+      <PageTransition appear :name="transitionName" overlay>
         <div v-if="isShow" ring w-60 h-60 my-10 rounded-xl flex items-center justify-center>
           Choose transition from top
         </div>

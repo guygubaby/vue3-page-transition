@@ -10,6 +10,7 @@ export interface IPageTransitionProps {
   name?: ITransitionName
   mode?: ITransitionMode
   appear?: Appear
+  overlay?: boolean
   overlayBg?: string
   transitionDuration?: number
   transformDistance?: number
@@ -56,6 +57,11 @@ export const PageTransition = defineComponent({
       required: false,
       default: 40,
     },
+    overlay: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   setup(props, { slots }) {
     const router = useRouter()
@@ -85,27 +91,40 @@ export const PageTransition = defineComponent({
       return transformDistance
     }
 
-    return () => (
-      h('div',
-        {
-          style: {
-            '--overlay-bg': props.overlayBg ? props.overlayBg : null,
-            '--transition-duration': props.transitionDuration ? `${props.transitionDuration}ms` : null,
-            '--transform-distance': getTransformDistance(),
-          },
-        },
-        [
-          h(Transition, {
-            name: transition.value,
-            mode: props.mode || 'out-in',
-            appear: props.appear ?? false,
-          }, () => slots.default?.()),
-          h('div', { class: 'overlay-top' }),
-          h('div', { class: 'overlay-right' }),
-          h('div', { class: 'overlay-bottom' }),
-          h('div', { class: 'overlay-left' }),
-        ],
-      )
-    )
+    const genCssVars = () => {
+      return {
+        '--overlay-bg': props.overlayBg ? props.overlayBg : null,
+        '--transition-duration': props.transitionDuration ? `${props.transitionDuration}ms` : null,
+        '--transform-distance': getTransformDistance(),
+      }
+    }
+
+    const renderTransition = () => {
+      const style = props.overlay ? {} : genCssVars()
+
+      return h(Transition, {
+        name: transition.value,
+        mode: props.mode || 'out-in',
+        appear: props.appear ?? false,
+        style,
+      }, () => slots.default?.())
+    }
+
+    return () => props.overlay
+      ? (
+          h('div',
+            {
+              style: genCssVars(),
+            },
+            [
+              renderTransition(),
+              h('div', { class: 'overlay-top' }),
+              h('div', { class: 'overlay-right' }),
+              h('div', { class: 'overlay-bottom' }),
+              h('div', { class: 'overlay-left' }),
+            ],
+          )
+        )
+      : renderTransition()
   },
 })

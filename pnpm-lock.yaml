@@ -37,7 +37,7 @@ importers:
       vitest: ^0.23.2
       vue: ^3.2.39
       vue-router: ^4.1.5
-      vue3-page-transition: workspace:^0.1.1
+      vue3-page-transition: workspace:^0.1.2
     dependencies:
       prism-theme-vars: 0.2.4
       vue3-page-transition: link:packages/core
