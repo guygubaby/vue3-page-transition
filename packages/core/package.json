@@ -1,6 +1,6 @@
 {
   "name": "vue3-page-transition",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A lean Vue.js plugin for page / route transitions.",
   "publishConfig": {
     "access": "public"
