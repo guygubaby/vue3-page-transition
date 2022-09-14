@@ -10,7 +10,7 @@
         class="icon-btn"
         i-carbon-logo-github
         rel="noreferrer"
-        href="https://github.com/guygubaby/monorepo-starter"
+        href="https://github.com/guygubaby/vue3-page-transition"
         target="_blank"
         title="GitHub"
       />

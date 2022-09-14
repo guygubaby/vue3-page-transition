@@ -14,7 +14,7 @@ pnpm i vue3-page-transition
 <template>
   <main>
     <router-view v-slot="{ Component }">
-      <PageTransition name="fade-in-up" appear>
+      <PageTransition :name="TransitionPresets.fade" appear>
         <component :is="Component" />
       </PageTransition>
     </router-view>
@@ -22,18 +22,18 @@ pnpm i vue3-page-transition
 </template>
 
 <script lang="ts" setup>
-import { PageTransition } from 'vue3-page-transition'
-import 'vue3-page-transition/style.css'
+import { PageTransition, TransitionPresets } from 'vue3-page-transition'
 
 // Or in main.ts
 import { createApp } from 'vue'
 import PageTransition from 'vue3-page-transition'
-import 'vue3-page-transition/style.css'
 
 const app = createApp({...})
 app.use(PageTransition)
 </script>
 ```
+
+## [Live Demo](https://vue3-page-transition.netlify.app/)
 
 ## License
 
