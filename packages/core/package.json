@@ -37,7 +37,8 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "shims.d.ts"
   ],
   "scripts": {
     "copy-readme": "esno ../../scripts/copy-readme.ts",
