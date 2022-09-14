@@ -5,7 +5,7 @@
         Vue3 page transition
       </h1>
 
-      <ul flex="~" gap-4>
+      <ul flex="~" gap-4 max-w-screen overflow-x-auto pb-2 px="4 lg:0">
         <li v-for="item in TransitionPresets" :key="item">
           <button class="icon-btn" @click="setTransitionName(item)">
             {{ item }}
@@ -14,8 +14,8 @@
       </ul>
 
       <PageTransition appear :name="transitionName" overlay>
-        <div v-if="isShow" ring w-60 h-60 my-10 rounded-xl flex items-center justify-center>
-          Choose transition from top
+        <div v-if="isShow" w-70 h-70 my-10 rounded-xl flex items-center justify-center bg-violet-500>
+          Click transition from top
         </div>
       </PageTransition>
     </div>
