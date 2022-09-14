@@ -13,4 +13,3 @@ node_modules
 packages/runtime/*.global.js
 result.json
 test/fixtures/**/pnpm-lock.yaml
-playground/.vite-inspect
