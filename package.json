@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "prism-theme-vars": "^0.2.4",
-    "vue3-page-transition": "workspace:^0.1.2"
+    "vue3-page-transition": "^0.1.4"
   },
   "devDependencies": {
     "@bryce-loskie/eslint-config": "^2.0.4",

@@ -45,7 +45,7 @@
     "prepublishOnly": "pnpm run copy-readme && pnpm run build",
     "dev": "pnpm build --watch",
     "build-dts": "tsc src/index.ts --declaration --emitDeclarationOnly --outDir dist",
-    "build": "esno build.ts && pnpm run build-dts",
+    "build": "esno build.ts && npx pnpm run build-dts",
     "start": "esno src/index.ts"
   },
   "peerDependencies": {

@@ -13,8 +13,8 @@
         </li>
       </ul>
 
-      <PageTransition appear :name="transitionName" overlay>
-        <div v-if="isShow" w-70 h-70 my-10 rounded-xl flex items-center justify-center bg-violet-500>
+      <PageTransition appear :name="transitionName" overlay overlay-bg="#818cf8">
+        <div v-if="isShow" w-70 h-70 my-10 rounded-xl flex items-center justify-center bg-violet-400 text-white cursor-pointer @click="triggerTransition">
           Click transition from top
         </div>
       </PageTransition>
