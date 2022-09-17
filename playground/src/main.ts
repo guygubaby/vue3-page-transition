@@ -5,6 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { createHead } from '@vueuse/head'
 
 import App from './App.vue'
+import WrapperMd from './components/WrapperMd.vue'
 
 import '@unocss/reset/tailwind.css'
 import './styles/main.scss'
@@ -19,6 +20,7 @@ const router = createRouter({
 
 const app = createApp(App)
 
+app.component('WrapperMd', WrapperMd)
 app.use(router)
 app.use(createHead())
 
