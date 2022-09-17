@@ -102,8 +102,10 @@ export const PageTransition = defineComponent({
     )
 
     router.beforeEach((to, _, next) => {
-      if (!to.meta.transition)
+      if (!to.meta.transition) {
+        transition.value = props.name
         return next()
+      }
 
       transition.value = (to.meta.transition as ITransitionName) || props.name
       next()
@@ -151,22 +153,10 @@ export const PageTransition = defineComponent({
       }
 
       return h(Fragment, [
-        h('div', {
-          class: 'overlay-top',
-          style,
-        }),
-        h('div', {
-          class: 'overlay-right',
-          style,
-        }),
-        h('div', {
-          class: 'overlay-bottom',
-          style,
-        }),
-        h('div', {
-          class: 'overlay-left',
-          style,
-        }),
+        h('div', { class: 'overlay-top', style }),
+        h('div', { class: 'overlay-right', style }),
+        h('div', { class: 'overlay-bottom', style }),
+        h('div', { class: 'overlay-left', style }),
       ])
     }
 

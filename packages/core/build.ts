@@ -45,7 +45,12 @@ const buildBundle = async (format: Format) => {
     outfile,
     target: ['es2016'],
     bundle: true,
-    plugins: [sassPlugin() as Plugin, injectImportStylePlugin],
+    plugins: [
+      sassPlugin({
+        type: 'css',
+      }) as Plugin,
+      injectImportStylePlugin,
+    ],
   })
 
   finish(format)
