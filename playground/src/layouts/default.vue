@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-import { PageTransition, defineTransitionProps } from 'vue3-page-transition'
+import { PageTransition, defineTransitionProps } from 'core/index'
 
 const transitionProps = defineTransitionProps({
   overlay: true,
