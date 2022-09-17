@@ -37,10 +37,8 @@ importers:
       vitest: ^0.23.2
       vue: ^3.2.39
       vue-router: ^4.1.5
-      vue3-page-transition: ^0.1.4
     dependencies:
       prism-theme-vars: 0.2.4
-      vue3-page-transition: link:packages/core
     devDependencies:
       '@bryce-loskie/eslint-config': 2.0.4_irgkl5vooow2ydyo6aokmferha
       '@iconify-json/carbon': 1.1.7

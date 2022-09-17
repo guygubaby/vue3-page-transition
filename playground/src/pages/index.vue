@@ -34,8 +34,8 @@
 </template>
 
 <script setup lang="ts">
-import type { ITransitionName } from 'vue3-page-transition'
-import { PageTransition, TransitionPresets } from 'vue3-page-transition'
+import type { ITransitionName } from 'core/index'
+import { PageTransition, TransitionPresets } from 'core/index'
 
 const isShow = ref(true)
 
