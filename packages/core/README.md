@@ -2,7 +2,7 @@
 
 ## [Live Demo](https://vue3-page-transition.netlify.app/)
 
-## A fork from [vue-page-transition](https://github.com/Orlandster/vue-page-transition) and made it work with Vue 3
+## A fork from [vue-page-transition](https://github.com/Orlandster/vue-page-transition) and make it work with Vue 3
 
 [![NPM version](https://img.shields.io/npm/v/vue3-page-transition?color=a1b858&label=)](https://www.npmjs.com/package/vue3-page-transition)
 
