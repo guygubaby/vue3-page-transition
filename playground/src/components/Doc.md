@@ -20,15 +20,15 @@ pnpm i vue3-page-transition
 ```html
 <template>
   <main>
-    <router-view v-slot="{ Component }">
-      <PageTransition name="fade" appear>
-        <component :is="Component" />
+    <router-view v-slot='{ Component }'>
+      <PageTransition name='fade' appear>
+        <component :is='Component' />
       </PageTransition>
     </router-view>
   </main>
 </template>
 
-<script lang="ts" setup>
+<script lang='ts' setup>
 import { PageTransition } from 'vue3-page-transition'
 </script>
 ```
@@ -38,15 +38,15 @@ import { PageTransition } from 'vue3-page-transition'
 ```html
 <template>
   <main>
-    <router-view v-slot="{ Component }">
-      <PageTransition v-bind="transitionProps">
-        <component :is="Component" />
+    <router-view v-slot='{ Component }'>
+      <PageTransition v-bind='transitionProps'>
+        <component :is='Component' />
       </PageTransition>
     </router-view>
   </main>
 </template>
 
-<script lang="ts" setup>
+<script lang='ts' setup>
 import { PageTransition, TransitionPresets, defineTransitionProps } from 'vue3-page-transition'
 
 const transitionProps = defineTransitionProps({
