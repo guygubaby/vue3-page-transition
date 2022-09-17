@@ -33,8 +33,9 @@ export interface IPageTransitionProps {
   overlay?: boolean
   overlayZIndex?: number
   overlayBg?: string
+  overlayBgClassName?: string
   transitionDuration?: number
-  transformDistance?: number
+  transformDistance?: number | string
 }
 
 export const defineTransitionProps = (props: IPageTransitionProps) => props
@@ -61,6 +62,11 @@ export const PageTransition = defineComponent({
       type: String,
       required: false,
       default: '#1867c0',
+    },
+    overlayBgClassName: {
+      type: String,
+      required: false,
+      default: '',
     },
     /**
      * In ms, default is 300ms
@@ -152,12 +158,15 @@ export const PageTransition = defineComponent({
         zIndex: props.overlayZIndex ?? 9999,
       }
 
-      return h(Fragment, [
-        h('div', { class: 'overlay-top', style }),
-        h('div', { class: 'overlay-right', style }),
-        h('div', { class: 'overlay-bottom', style }),
-        h('div', { class: 'overlay-left', style }),
-      ])
+      const overlayList = ['top', 'right', 'bottom', 'left']
+
+      return h(
+        Fragment,
+        overlayList.map(position => h('div', {
+          class: `overlay-${position} ${props.overlayBgClassName}`,
+          style,
+        })),
+      )
     }
 
     return () =>
