@@ -1,6 +1,6 @@
 {
   "name": "vue3-page-transition-monorepo",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "packageManager": "pnpm@7.11.0",
   "description": "A lean Vue.js plugin for page / route transitions.",
